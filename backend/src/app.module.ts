@@ -4,6 +4,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
+import { AuthModule } from './auth/auth.module';
+import { ProfileModule } from './profile/profile.module';
+import { CategoriesModule } from './category/categories.module';
+import { Category } from './entities/category.entity';
 
 @Module({
   imports: [
@@ -14,11 +18,14 @@ import { User } from './entities/user.entity';
       username: 'root', // Имя пользователя MySQL
       password: '', // Пароль MySQL
       database: 'urbanedge', // Название базы данных
-      entities: [User], // Пути к моделям
+      entities: [User, Category], // Пути к моделям
       synchronize: false, // Автоматическое создание таблиц (не используйте в production)
       logging: false, // Включение логирования запросов
     }),
     UsersModule,
+    AuthModule,
+    ProfileModule,
+    CategoriesModule
   ],
   controllers: [AppController],
   providers: [AppService],
