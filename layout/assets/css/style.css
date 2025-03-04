@@ -1,0 +1,129 @@
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 33px 0;
+    background-color: transparent;
+
+    &>.container{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & nav.header__nav{
+        display: flex;
+        max-width: 1135px;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 25px;
+
+        &>a{
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 10px;
+            color: #000;
+            transition: 0.4s;
+            border-bottom: 1px solid transparent;
+
+            &:hover{
+                border-color: #000;
+            }
+        }
+
+    }
+
+    & .widget__block{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        width: fit-content;
+
+        &>a{
+            display: flex;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+        
+            &>svg>path,react{
+                transition: 0.4s;
+            }
+
+            &:hover svg>path,react{
+                fill: #BDBDBD;
+            }
+        }
+    }
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    margin-top: 50px;
+    border-top: 1px solid #BDBDBD;
+
+    &>.container{
+        gap: 50px;
+    }
+
+    & .logo{
+        margin: 0 auto;
+    }
+
+    & nav.footer__nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        gap: 25px 100px;
+        width: 100%;
+
+        &>a{
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 400;
+            color: #BDBDBD;
+            transition: 0.4s;
+
+            &:hover{
+                color: #000;
+            }
+        }
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+section.slider__sec{
+    padding: 0;
+    height: 90vh;    
+    border-bottom: 1px solid #BDBDBD;
+    margin-bottom: 50px;
+
+    &>.container{
+        height: 100%;
+    }
+}
+
+section.new__sec{
+
+    & .product__start{
+        display: flex;
+        max-width: 425px;
+        padding: 25px;
+        width: 100%;
+        height: auto;
+        background-color: #F1F1F1;
+        box-shadow: 0 0 0 1px #000;
+    }
+
+}

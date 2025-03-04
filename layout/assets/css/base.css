@@ -1,14 +1,23 @@
+.wrapper{
+    background-color: #F1F1F1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .container{
-    max-width: 1700px;
+    max-width: 1740px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 0px 20px;
 }
 
 .title__section{
     font-size: 40px;
     font-weight: 400;
     color: #000;
+    text-transform: uppercase;
 }
 
 .text__link{
@@ -17,8 +26,62 @@
     color: #000;
 }
 
+.btn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    width: fit-content;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.container__product{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 50px;
+    align-items: center;
+    
+    &>.list__card{
+        display: grid;
+        grid-template-columns: repeat(4, 425px);
+        width: fit-content;
+        gap: 1;
+
+        @media (max-width: 1750px) {
+            grid-template-columns: repeat(3, 425px);
+        }
+
+        @media (max-width: 1340px) {
+            grid-template-columns: repeat(2, 425px);
+        }
+
+        @media (max-width: 910px) {
+            grid-template-columns: repeat(1, 425px);
+        }
+    }
+
+    &>.btn__product{
+        width: 100%;
+        padding: 25px;
+        font-size: 20px;
+        font-weight: 400;
+        color: #000;
+        border: 1px solid #000;
+        transition: 0.4s;
+
+        &:hover{
+            color: #fff;
+            background-color: #000;
+        }
+    }
+}
+
 .card__product{
-    max-width: 425px;
+    max-width: 423px;
     width: 100%;
     height: 680px;
     display: flex;
@@ -26,6 +89,8 @@
     padding-top: 25px;
     align-items: center;
     cursor: pointer;
+    background-color: #F1F1F1;
+    box-shadow: 0 0 0 1px #000;
 
     &>.img__block{
         display: flex;
@@ -42,6 +107,17 @@
             top: 10px;
             left: 10px;
             cursor: pointer;
+            color: #BDBDBD;
+            transition: 0.4s;
+            font-size: 28px;
+
+            &.favorit__active{
+                color: #d13e3e;
+            }
+
+            &:hover{
+                color: #d13e3e;
+            }
         }
 
         &>.img__card{
@@ -70,12 +146,14 @@
         }
 
         &>.price__product{
+            justify-content: end;
             max-width: 175px;
         }
 
     }
 
     &>.add_basket__btn{
+        background-color: #F1F1F1;
         display: flex;
         border: none;
         outline: none;
@@ -86,8 +164,169 @@
         justify-content: center;
         text-align: center;
         border-top: 1px solid #000;
-        font-size: ;
-        font-weight: ;
+        font-size: 16px;
+        font-weight: 400;
+        transition: 0.4s;
+
+        &:hover{
+            background-color: #000;
+            color: #fff;
+        }
+
     }
 
+}
+
+.slider{
+    user-select: none;
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+
+    &>.slider__line{
+        display: flex;
+        height: 100%;
+        transition: 0.4s;
+
+        &>.slide{
+            height: 100%;
+            width: 1700px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &>.main__text{
+                display: flex;
+                flex-direction: column;
+                max-width: 430px;
+                width: 100%;
+                gap: 50px;
+
+                &>h2.title{
+                    font-weight: 400;
+                    font-size: 60px;
+                    color: #000;
+                }
+
+                &>p.price{
+                    font-size: 60px;
+                    color: #BDBDBD;
+                    font-family: "Jeju";
+                }
+            }
+
+            &>img.product__img{
+                height: 100%;
+                width: auto;
+                -webkit-user-drag: none;
+            }
+
+            &>.second__text{
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                max-width: 291px;
+                width: 100%;
+
+                &>.text__block{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    &>p{
+                        font-size: 18px;
+                        font-weight: 400;
+                        color: #000;
+                    }
+
+                    &>p.small{
+                        color: #BDBDBD;
+                    }
+                }
+            }
+        }
+    }
+
+    &>.slider__nav{
+        position: absolute;
+        bottom: 100px;
+        left: 0;
+        height: 10px;
+        display: flex;
+        gap: 25px;
+        align-items: end;
+        z-index: 2;
+
+        &>.slider__btn{
+            cursor: pointer;
+            width: 80px;
+            height: 5px;
+            background-color: #BDBDBD;
+            transition: 0.3s;
+
+            &:hover{
+                height: 8px;
+                background-color: #000;
+            }
+
+            &.active{
+                height: 10px;
+                background-color: #000;
+            }
+        }
+    }
+}
+
+.category__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+
+    &>.category__item{
+        max-width: 320px;
+        width: 100%;
+        display: flex;
+
+        &>a{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 25px;
+
+            &>img{
+                width: 100%;
+                height: auto;
+            }
+
+            &>h3{
+                font-size: 20px;
+                display: flex;
+                text-transform: uppercase;
+                justify-content: space-between;
+                align-items: center;
+
+                &>svg{
+                    transition: 0.4s;
+                }
+            }
+
+            &:hover h3 svg{
+                margin-right: 30px;
+            }
+        }
+    }
+}
+
+& .logo h1{
+    text-transform: uppercase;
+    display: flex;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: "Jock";
+    color: #000;
 }
