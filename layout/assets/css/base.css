@@ -51,6 +51,21 @@
             color: #000;
         }
     }
+
+    &.btn__border{
+        width: 100%;
+        background-color: transparent;
+        color: #000;
+        padding: 25px;
+        font-size: 18px;
+        border: 1px solid #000;
+        transition: 0.4s;
+
+        &:hover{
+            background-color: #000;
+            color: #F1F1F1;
+        }
+    }
 }
 
 .container__product{
@@ -538,4 +553,86 @@
     &::placeholder{
         color: #BDBDBD;
     }
+}
+
+.text__container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+
+    &>p{
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 400;
+        color: #000;        
+    }
+
+    &.text__container_border{
+        padding: 50px 0;
+        border-bottom: 1px solid #BDBDBD;
+        border-top: 1px solid #BDBDBD;
+    }
+}
+
+.clear__section_screen{    
+    &>.container{
+        align-items: center;
+        gap: 100px;
+    }
+
+    & img{
+        max-width: 189px;
+    }
+
+    & .btn{
+        max-width: 550px;
+    }
+}
+
+.def__form{
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    width: 100%;
+    gap: 25px;
+    margin: 0 auto;
+    align-items: center;
+
+    & input{
+        padding-top: 0;
+    }
+
+    & input:last-of-type{
+        margin-bottom: 75px;
+    }
+}
+
+nav.sider__nav{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+    gap: 25px;
+
+    &>a{
+        text-transform: uppercase;
+        font-size: 20px;
+        transition: 0.4s;
+        color: #BDBDBD;
+
+        &:hover{
+            color: #000;
+        }
+
+        &.active{
+            color: #000;
+        }
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
