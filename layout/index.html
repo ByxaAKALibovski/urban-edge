@@ -1029,6 +1029,203 @@
             </section>
             <!-- Profile history screen end -->
             <!-- Profile page layout end -->
+
+            <!-- Admin page layout start -->
+            <section class="title__page_sec">
+                <div class="container">
+                    <h2>Администратор</h2>
+                </div>
+            </section>
+            <!-- Admin main screen -->
+            <section class="admin__sec">
+                <div class="container">
+                    <nav class="sider__nav admin__nav">
+                        <a href="admin-main" class="active">главная</a>
+                        <a href="admin-category">категории</a>
+                        <a href="admin-product">товары</a>
+                        <a href="admin-orders">заказы</a>
+                    </nav>
+                    <ul class="admin_info__list">
+                        <li>
+                            <img src="assets/media/admin-img/orders.png" alt="orders">
+                            <h3>3564</h3>
+                            <p>заказов</p>
+                        </li>
+                        <li>
+                            <img src="assets/media/admin-img/products.png" alt="orders">
+                            <h3>254</h3>
+                            <p>позиции товара</p>
+                        </li>
+                        <li>
+                            <img src="assets/media/admin-img/client.png" alt="orders">
+                            <h3>23</h3>
+                            <p>довольных клиента</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Admin main screen end -->
+            <!-- Admin category screen -->
+            <section class="admin__sec">
+                <div class="container">
+                    <nav class="sider__nav admin__nav">
+                        <a href="admin-main">главная</a>
+                        <a href="admin-category" class="active">категории</a>
+                        <a href="admin-product">товары</a>
+                        <a href="admin-orders">заказы</a>
+                    </nav>
+                    <div class="admin_item__list category_admin__list">
+                        <button class="btn btn__black" data-target="add_category">добавить категорию</button>
+                        <ul>
+                            <li class="head">
+                                <p>наименование</p>
+                                <p>изображение</p>
+                                <p></p>
+                            </li>
+                            <li data-category-id="1">
+                                <p class="title">футболки</p>
+                                <p class="img">futbolka.png</p>
+                                <p class="del"><button data-target="del_category"><img src="assets/media/icons/trash.svg" alt="trash"></button></p>
+                            </li>
+                            <li data-category-id="2">
+                                <p class="title">штаны/брюки</p>
+                                <p class="img">bruki.png</p>
+                                <p class="del"><button data-target="del_category"><img src="assets/media/icons/trash.svg" alt="trash"></button></p>
+                            </li>
+                            <li data-category-id="3">
+                                <p class="title">рубашки</p>
+                                <p class="img">rubashka.png</p>
+                                <p class="del"><button data-target="del_category"><img src="assets/media/icons/trash.svg" alt="trash"></button></p>
+                            </li>
+                            <li data-category-id="4">
+                                <p class="title">шорты</p>
+                                <p class="img">short.png</p>
+                                <p class="del"><button data-target="del_category"><img src="assets/media/icons/trash.svg" alt="trash"></button></p>
+                            </li>
+                        </ul>
+                        <div class="popup" data-popup="add_category">
+                            <div class="over"></div>
+                            <form action="add_category_action" method="post" enctype="multipart/form-data">
+                                <h2>добавление новой категории</h2>
+                                <input type="text" class="input" name="title" placeholder="НАИМЕНОВАНИЕ" required>
+                                <label for="img_category" class="label__file">
+                                    <input type="file" required name="img" id="img_category">
+                                    <p>изображение <img src="assets/media/admin-img/upload.png" alt="upload"></p>
+                                </label>
+                                <button class="btn btn__border">добавить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Admin category screen end -->
+            <!-- Admin product screen -->
+            <section class="admin__sec">
+                <div class="container">
+                    <nav class="sider__nav admin__nav">
+                        <a href="admin-main">главная</a>
+                        <a href="admin-category">категории</a>
+                        <a href="admin-product" class="active">товары</a>
+                        <a href="admin-orders">заказы</a>
+                    </nav>
+                    <div class="admin_item__list product_admin__list">
+                        <button class="btn btn__black" data-target="add_product">добавить товар</button>
+                        <ul>
+                            <li class="head">
+                                <p>наименование</p>
+                                <p>стоимость</p>
+                                <p>состав</p>
+                                <p>размер</p>
+                                <p>категория</p>
+                                <p></p>
+                            </li>
+                            <li data-category-id="1">
+                                <p class="title">Брюки Карго Джоггеры</p>
+                                <p class="price">4 445 &#8381;</p>
+                                <p class="compound">полиэстр 100%</p>
+                                <p class="size">s, M, L, xl, xxl</p>
+                                <p class="category">штаны/брюки</p>
+                                <p class="del"><button data-target="del_product"><img src="assets/media/icons/trash.svg" alt="trash"></button></p>
+                            </li>
+                        </ul>
+                        <div class="popup" data-popup="add_product">
+                            <div class="over"></div>
+                            <form action="add_product_action" method="post" enctype="multipart/form-data">
+                                <h2>добавление нового товара</h2>
+                                <input type="text" class="input" name="title" placeholder="НАИМЕНОВАНИЕ" required>
+                                <input type="text" class="input" name="price" placeholder="СТОИМОСТЬ" required>
+                                <input type="text" class="input" name="compaund" placeholder="СОСТАВ" required>
+                                <input type="text" class="input" name="size" placeholder="РАЗМЕР" required>
+                                <!-- <div class="custom__select_container">
+                                    <p class="active__item">
+                                        <span class="value">категория</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.000000" height="9.000000" viewBox="0 0 12 9" fill="none">
+                                            <desc>
+                                                    Created with Pixso.
+                                            </desc>
+                                            <defs/>
+                                            <path id="Vector" d="M12 0L12 2.57L6 9L0 2.57L0 0L6 6.42L12 0Z" fill="#BDBDBD" fill-opacity="1.000000" fill-rule="evenodd"/>
+                                        </svg>
+                                    </p>
+                                    <ul class="list__item">
+                                        <p data-value="0" data-selected="true">категория</p>
+                                        <p data-value="1" data-selected="false">категория 1</p>
+                                        <p data-value="2" data-selected="false">категория 2</p>
+                                        <p data-value="3" data-selected="false">категория 3</p>
+                                        <p data-value="4" data-selected="false">категория 4</p>
+                                    </ul>
+                                </div> -->
+                                <select class="custom__select" name="category_product" id="category_product">
+                                    <option value="0" selected>категория</option>
+                                    <option value="1">категория 1</option>
+                                    <option value="2">категория 2</option>
+                                    <option value="3">категория 3</option>
+                                    <option value="4">категория 4</option>
+                                </select>
+                                <label for="img_product" class="label__file">
+                                    <input type="file" required name="img[]" id="img_product" multiple>
+                                    <p>изображение <img src="assets/media/admin-img/upload.png" alt="upload"></p>
+                                </label>
+                                <button class="btn btn__border">добавить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Admin product screen end -->
+            <!-- Admin orders screen -->
+            <section class="admin__sec">
+                <div class="container">
+                    <nav class="sider__nav admin__nav">
+                        <a href="admin-main">главная</a>
+                        <a href="admin-category">категории</a>
+                        <a href="admin-product">товары</a>
+                        <a href="admin-orders" class="active">заказы</a>
+                    </nav>
+                    <div class="admin_item__list orders_admin__list">
+                        <ul>
+                            <li class="head">
+                                <p>номер заказа</p>
+                                <p>стоимость</p>
+                                <p>получатель</p>
+                                <p>адрес</p>
+                                <p>телефон</p>
+                                <p>статус</p>
+                            </li>
+                            <li data-category-id="1">
+                                <p class="number__order">#100720</p>
+                                <p class="total__price_order">15 095 &#8381;</p>
+                                <p class="FIO">Крылов Иван Иванович</p>
+                                <p class="adres">г.пенза, ул. красная 54,67</p>
+                                <p class="phone">89273689965</p>
+                                <p class="status">в пути</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Admin orders screen end -->
+            <!-- Admin page layout end -->
         </main>
         <footer>
             <div class="container">
